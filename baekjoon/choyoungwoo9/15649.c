@@ -18,7 +18,7 @@ void print_ar(int *ar, int depth)
 	for(int i = 0; i < depth; i ++)
 	{
 		if(i == depth -1)
-			printf("%d \n", *(ar + i));
+			printf("%d\n", *(ar + i));
 		else
 			printf("%d ", *(ar + i));
 	}
@@ -26,7 +26,7 @@ void print_ar(int *ar, int depth)
 
 void dfs(int num, int depth, int current_num, int current_depth, int *ar)
 {
-	//printf("c : %d  d: %d\n", current_depth, depth);
+	//printf("depth : %d  num: %d\n", current_depth, current_num);
 	if(depth < current_depth)
 		return ;
 
@@ -48,13 +48,14 @@ void my_algo(int N, int M)
 {
 	int num;
 	int depth;
+	//int ar[10];
 
 	num = N;
 	depth = M;
 	//printf("N : %d  M: %d\n", N, M);
 	for(int i = 1; i <= num; i ++)
 	{
-		int *ar = malloc(N);
+		int *ar = malloc(sizeof(int) * 10);
 		dfs(num, depth, i, 1, ar);
 	}	
 }

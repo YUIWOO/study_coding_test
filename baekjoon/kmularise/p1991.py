@@ -8,17 +8,20 @@ class BinaryTree():
 	def __init__(self):
 		self.root = None
 	def find(self, n, item):
-		temp = None
+		temp_right = None
+		temp_left = None
 		print("check", n.item)
 		print(n.item == item)
 		if n != None:
 			if n.item == item:
 				return n
-			else:
-				if n.left:
-					return self.find(n.left, item)
-				if n.right:
-					return self.find(n.right, item)
+			if n.left:
+				temp_left = self.find(n.left, item)
+			if n.right:
+				temp_right = self.find(n.right, item)
+		if (temp_left != None)
+			return temp_left
+		return temp_right
 	def preorder(self, n):
 		if n != None:
 			print(n.item, '', end='')

@@ -5,21 +5,12 @@
 
 int map_valid_check(char *map)
 {
-	int a_count = 0;
-	int b_count = 0;
-	for(int i = 0; *(map + i); i ++)
+	printf("%s", strstr(map, "AA"));
+	while((strstr(map, "AA") || strstr(map, "BB")) )
 	{
-		if(*(map + i) == 'A')
-			a_count ++;
-		if(*(map + i) == 'B')
-			b_count ++;
+		printf("%s", strstr(map, "AA"));
 	}
-	if(a_count%2 || b_count%2)
-		return 0;
-	if(strstr(map, "ABA"))
-		return 0;
-	if(strstr(map, "BAB"))
-		return 0;
+
 	return 1;
 }
 

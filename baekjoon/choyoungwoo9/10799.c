@@ -6,20 +6,11 @@
 
 int main()
 {
-	char *str;
-	str = malloc(sizeof(char) * 100001);
+	char str[100001];
 	//scanf("%s", str);
 	char c;
 	int i = 0;
-	while(1)
-	{
-		scanf("%c", &c);
-		if(c == '\n')
-			break;
-		*(str + i) = c;
-		i ++;
-	}
-	*(str + i) = 0;
+	scanf("%s", str);
 	//printf("%s\n", str);
 	int answer;
 	int stick_count;
@@ -30,7 +21,7 @@ int main()
 		if(*(str + i) == '(' && *(str + i + 1) == ')')
 		{
 			answer = answer + stick_count;
-			i ++;
+			i = i + 1;
 		}
 		else if(*(str + i) == '(')
 		{
@@ -46,6 +37,6 @@ int main()
 		// 	printf("??\n");
 		// }
 	}
-	printf("%d\n", answer);
+	printf("%d", answer);
 	//printf("%d\n", stick_count);
 }

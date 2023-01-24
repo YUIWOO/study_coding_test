@@ -13,25 +13,25 @@ int static compare (const void* first, const void* second)
 
 void get_answer(int *ar, int left, int right, int num)
 {
-	sleep(1);
-	printf("answer : left %d right %d num %d\n", left, right, num);
-	if(*(ar + (right - left) / 2) == num)
+	//sleep(1);
+	//printf("answer : left %d right %d num %d\n", left, right, num);
+	if(*(ar + (right + left) / 2) == num)
 	{
 		printf("1\n");
 		return ;
 	}
-	if(right == left)
+	if(right <= left)
 	{
 		printf("0\n");
 		return ;
 	}
 	if(*(ar + (left + right) / 2) > num)
 	{
-		get_answer(ar, left, (right - left)/2 - 1, num);
+		get_answer(ar, left, (right + left)/2 - 1, num);
 	}
 	if(*(ar + (left + right) / 2) < num)
 	{
-		get_answer(ar, (right - left)/2 + 1, right, num);
+		get_answer(ar, (right + left)/2 + 1, right, num);
 	}
 }
 

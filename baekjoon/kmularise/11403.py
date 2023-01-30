@@ -24,9 +24,9 @@ def bfs (graph, node, visited):
                 visited[i] = True
 
 for i in range(n):
+	visited = [False] * n
+	bfs(graph, i, visited)
 	for j in range(n):
-		visited = [False] * n
-		bfs(graph, i, visited)
 		if visited[j] == True:
 			if j != n - 1:
 				print(1, end=' ')

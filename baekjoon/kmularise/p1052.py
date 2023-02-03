@@ -1,39 +1,31 @@
-#N개의 물병
-# 처음엔 1리터
-N, K = map(int, input().split())
-print(N, K)
-
-def find_max_of_power_of_two(target):
-	i = 0
-	if target == 0:
-		return 0
-	while (2 ** i <= target):
-		i+=1
-	return 2 ** (i - 1)
-count = 0
-while (1):
-	target = N + count
-	for i in range(K):
-		if target == 0:
+def get_one_count_in_bit(num):
+	count = 0
+	while (1):
+		if num %2 == 1:
+			count +=1
+		if (num //2 == 0):
 			break
-		factor = find_max_of_power_of_two(target)
-		# print(factor)
-		target -= factor
-	# break
-	if target == 0:
-		break
-	count +=1
-if N < K:
-	print(K - N)
-# 	print(-1)
-# elif N==K:
-# 	print(0)
-# else:
-# 	print(count)
-else:
-	print(count)
+		num = num //2
+	return count
 
-# print(bin(10).count('1'))
-# print(bin(10))
-# print(bin(10)[::-1])
-# .index('1'))
+def get_count(num):
+	count = 0
+	while (1):
+		if num %2 == 1:
+			break
+		if (num //2 == 0):
+			break
+		num = num //2
+		count+=1
+	return 2 ** count
+
+N, K = map(int, input().split())
+
+min_count = 0
+
+while get_one_count_in_bit(N) > K:
+    count_tmp = get_count(N)
+    N+=count_tmp
+    min_count+=count_tmp
+
+print(min_count)

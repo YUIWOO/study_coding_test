@@ -10,3 +10,5 @@ for hole in holes:
 		compare_idx = hole
 		count += 1
 print(count)
+
+1 1 + (2 - 1)

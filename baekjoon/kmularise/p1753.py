@@ -14,6 +14,7 @@ def dijkstra(start):
 		dist, node = heapq.heappop(pq)
 		if distance[node] < dist:
 			continue
+		#distance[node] = dist
 		for next, weight in graph[node]:
 			temp = distance[node] + weight
 			if temp < distance[next]:

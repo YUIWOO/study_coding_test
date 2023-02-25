@@ -52,23 +52,23 @@ def dijkstra(start):
 visited = [False for _ in range(N + 1)]
 distance = [INF for _ in range(N + 1)]
 dijkstra(1)
-case1 = distance[mand1]
-case2 = distance[mand2]
+# case1 = distance[mand1]
+# case2 = distance[mand2]
 
-visited = [False for _ in range(N + 1)]
-distance = [INF for _ in range(N + 1)]
-dijkstra(mand1)
-case1 += distance[mand2]
-case2 += distance[mand2]
+# visited = [False for _ in range(N + 1)]
+# distance = [INF for _ in range(N + 1)]
+# dijkstra(mand1)
+# case1 += distance[mand2]
+# case2 += distance[mand2]
 
 
-visited = [False for _ in range(N + 1)]
-distance = [INF for _ in range(N + 1)]
-dijkstra(N)
-case1 += distance[mand2]
-case2 += distance[mand1]
+# visited = [False for _ in range(N + 1)]
+# distance = [INF for _ in range(N + 1)]
+# dijkstra(N)
+# case1 += distance[mand2]
+# case2 += distance[mand1]
 
-if min(case1, case2) >= INF:
-	print(-1)
-else:
-	print(min(case1, case2))
+# if min(case1, case2) >= INF:
+# 	print(-1)
+# else:
+# 	print(min(case1, case2))
